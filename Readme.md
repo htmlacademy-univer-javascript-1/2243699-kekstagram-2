@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Юлия Коваль](https://up.htmlacademy.ru/univer-js1/2/user/2243699).
-* Наставник: `Неизвестно`.
+* Наставник: [Алена Сафьянникова](https://htmlacademy.ru/profile/safyann)
 
 ---
 
