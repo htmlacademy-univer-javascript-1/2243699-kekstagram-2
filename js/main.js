@@ -21,3 +21,4 @@ const isCorrectLength = (str, maxLength) => {
   }
   return str.length <= maxLength;
 };
+export {getRandomInt, isCorrectLength};
