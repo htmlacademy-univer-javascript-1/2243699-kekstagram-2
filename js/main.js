@@ -15,11 +15,9 @@ function getRandomInt (from, to) {
     return Math.round(Math.random() * (toFrom - fromTemp) + fromTemp);
   }
 }
-console.log(getRandomInt([0,1,2,3], 9));
 const isCorrectLength = (str, maxLength) => {
   if (typeof str !== 'string') {
     throw new RangeError('Значение str должно быть строкой');
   }
   return str.length <= maxLength;
 };
-console.log(isCorrectLength([], 3));
