@@ -1,6 +1,13 @@
 const PHOTOS_COUNT = 25;
 const NAMES = ['Артем', 'Никита', 'Дмитрий', 'Василий', 'Иван'];
-const DESCRIPTIONS = Array.from({length: PHOTOS_COUNT}, (_, i) => 'Описание ${i}');
+const DESCRIPTIONS = [
+  'Счастье любит тишину.',
+  'Счастливые часов не наблюдают.',
+  'Не все то золото, что блестит.',
+  'Не знаешь, где найдешь, где потеряешь.',
+  'Счастье там, где нас любят.',
+  'Счастлив тот, кто у себя дома.'
+]
 const MESSAGES = [
   'Всё отлично!',
   'В целом всё неплохо. Но не всё.',
@@ -65,10 +72,14 @@ function generateComment() {
 function generateDescription() {
   const comments = Array.from({length: getRandomInt(0, 3)}, generateComment);
   const id = getId();
+  const descriptionTexts = [];
+  for (let i = 0; i < getRandomInt(1, 2); i++) {
+    descriptionTexts.push(getRandomElement(DESCRIPTIONS));
+  }
   return {
     id: id,
     url: 'photos/${id}.jpg',
-    description: DESCRIPTIONS[id - 1],
+    description: descriptionTexts.join(''),
     likes: getRandomLikes(),
     comments: comments
   };
@@ -77,3 +88,4 @@ function generateDescription() {
 const descriptions = Array.from({length: PHOTOS_COUNT}, generateDescription);
 
 isCorrectLength(descriptions, PHOTOS_COUNT);
+
