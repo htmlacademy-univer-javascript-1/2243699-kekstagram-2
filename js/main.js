@@ -77,11 +77,3 @@ function generateDescription() {
 const descriptions = Array.from({length: PHOTOS_COUNT}, generateDescription);
 
 isCorrectLength(descriptions, PHOTOS_COUNT);
-
-const isCorrectLength = (str, maxLength) => {
-  if (typeof str !== 'string') {
-    throw new RangeError('Значение str должно быть строкой');
-  }
-  return str.length <= maxLength;
-};
-export {getRandomInt, isCorrectLength};
