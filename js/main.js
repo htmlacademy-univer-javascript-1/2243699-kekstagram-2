@@ -1,6 +1,6 @@
 const PHOTOS_COUNT = 25;
 const NAMES = ['Артем', 'Никита', 'Дмитрий', 'Василий', 'Иван'];
-const DESCRIPTIONS = Array.from({length: PHOTOS_COUNT}, (_, i : number ) : string => 'Описание ${i}');
+const DESCRIPTIONS = Array.from({length: PHOTOS_COUNT}, (_, i) => 'Описание ${i}');
 const MESSAGES = [
   'Всё отлично!',
   'В целом всё неплохо. Но не всё.',
