@@ -7,7 +7,7 @@ const DESCRIPTIONS = [
   'Не знаешь, где найдешь, где потеряешь.',
   'Счастье там, где нас любят.',
   'Счастлив тот, кто у себя дома.'
-]
+];
 const MESSAGES = [
   'Всё отлично!',
   'В целом всё неплохо. Но не всё.',
@@ -63,7 +63,7 @@ function generateComment() {
   }
   return {
     id: getCommentId(),
-    avatar: 'img/avatar-${getRandomInt(1, 6)}.svg',
+    avatar: `img/avatar-${getRandomInt(1, 6)}.svg`,
     message: messageTexts.join(''),
     name: getRandomElement(NAMES)
   };
@@ -78,7 +78,7 @@ function generateDescription() {
   }
   return {
     id: id,
-    url: 'photos/${id}.jpg',
+    url: `photos/${id}.jpg`,
     description: descriptionTexts.join(''),
     likes: getRandomLikes(),
     comments: comments
