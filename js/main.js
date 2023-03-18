@@ -55,8 +55,8 @@ function generateComment() {
     messageTexts.push(getRandomElement(MESSAGES));
   }
   return {
-    id: getCommentId();
-    avatar: 'img/avatar-${getRandomInt(1, 6)}.svg';
+    id: getCommentId(),
+    avatar: 'img/avatar-${getRandomInt(1, 6)}.svg',
     message: messageTexts.join(''),
     name: getRandomElement(NAMES)
   };
