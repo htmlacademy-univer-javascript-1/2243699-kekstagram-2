@@ -1,1 +1,1 @@
-import {descriptions} from './data.js';
+import './picture rendering.js';
