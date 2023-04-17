@@ -7,11 +7,11 @@ const userPhotos = descriptions;
 const photoListFragment = document.createDocumentFragment();
 
 userPhotos.forEach(({url, likes, comments}) => {
-    const photoElement = userPhotosTemplate.cloneNode(true);
-    photoElement.querySelector('.picture__img').src = url;
-    photoElement.querySelector('.picture__likes').textContent = likes;
-    photoElement.querySelector('.picture__comments').textContent = comments.length;
-    photoListFragment.append(photoElement);
+  const photoElement = userPhotosTemplate.cloneNode(true);
+  photoElement.querySelector('.picture__img').src = url;
+  photoElement.querySelector('.picture__likes').textContent = likes;
+  photoElement.querySelector('.picture__comments').textContent = comments.length;
+  photoListFragment.append(photoElement);
 });
 
 photoConteiner.innerHTML = '';
