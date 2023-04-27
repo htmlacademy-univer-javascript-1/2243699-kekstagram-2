@@ -1,4 +1,4 @@
-const isEscapeKey = (evt) => evt.key === 'Escape';
+const isEscapeKey = (evt) => (evt.key === 'Escape');
 
 const checkStringLength = (str, maxLength) => (str.length <= maxLength);
 
