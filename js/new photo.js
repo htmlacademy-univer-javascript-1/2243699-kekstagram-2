@@ -11,32 +11,34 @@ const onUploadPhotoInputChange = (evt) => {
 };
 
 const onUploadPhotoEscKeydown = (evt) => {
-    if (isEscapeKey(evt)) {
-        evt.preventDefault();
-        closeUploadOverlay();
-    }
+  if (isEscapeKey(evt)) {
+    evt.preventDefault();
+    closeUploadOverlay();
+  }
 };
 
 const onUploadCancelBtnClick = () => {
-    closeUploadOverlay();
+  closeUploadOverlay();
 };
 
 function openUploadOverlay() {
-    upLoadPhotoOverlay.classList.remove('hidden');
-    document.body.classList.add('modal-open');
+  upLoadPhotoOverlay.classList.remove('hidden');
+  document.body.classList.add('modal-open');
 
-    document.addEventListener('keydown', onUploadPhotoEscKeydown);
-    upLoadCancelBtn.addEventListener('click', onUploadCancelBtnClick);
+  document.addEventListener('keydown', onUploadPhotoEscKeydown);
+  upLoadCancelBtn.addEventListener('click', onUploadCancelBtnClick);
 }
 
 function closeUploadOverlay() {
-    upLoadPhotoOverlay.classList.add('hidden');
-    document.body.classList.remove('modal-open');
+  upLoadPhotoOverlay.classList.add('hidden');
+  document.body.classList.remove('modal-open');
 
-    document.removeEventListener('keydown', onUploadPhotoEscKeydown);
-    upLoadCancelBtn.removeEventListener('click', onUploadCancelBtnClick);
+  document.removeEventListener('keydown', onUploadPhotoEscKeydown);
+  upLoadCancelBtn.removeEventListener('click', onUploadCancelBtnClick);
 
-    upLoadPhotoInput.value = null;
+  upLoadPhotoInput.value = null;
 }
 
 upLoadPhotoInput.addEventListener('change', onUploadPhotoInputChange);
+
+export {closeUploadOverlay};

@@ -1,4 +1,9 @@
 import {checkStringLength} from './util.js';
+import {sendData} from './api.js';
+import {showError} from './error.js';
+import {showSuccess} from './success.js';
+import {closeUploadOverlay} from './new photo.js';
+
 
 const pictureForm = document.querySelector('#upload-select-image');
 
@@ -7,18 +12,18 @@ const MAX_HASH_TAGS_LENGTH = 20;
 const MAX_COMMENT_LENGTH = 140;
 
 const validateHashTags = (hashTagsString) => {
-    if (hashTagsString.length === 0) {
-        return true;
-    }
+  if (hashTagsString.length === 0) {
+    return true;
+  }
 
-    const hashTags = hashTagsString.toLowerCase().split('');
+  const hashTags = hashTagsString.toLowerCase().split('');
 
-    if (hashTags.length > MAX_HASH_TAGS_VALUE) {
-        return false;
-    }
+  if (hashTags.length > MAX_HASH_TAGS_VALUE) {
+    return false;
+  }
 
-    return hashTags.every((hashTags) => /(^|\B)#(?![0-9]+\b)([a-zA-Z0-9]{1,19})(\b|\r)/g.test(hashTag)
-    && checkStringLength(hashTag, MAX_HASH_TAG_LENGTH));
+  return hashTags.every((hashTag) => /(^|\B)#(?![0-9]+\b)([a-zA-Z0-9]{1,19})(\b|\r)/g.test(hashTag)
+  && checkStringLength(hashTag, MAX_HASH_TAGS_LENGTH));
 };
 const validateComment = (comment) => (checkStringLength(comment, MAX_COMMENT_LENGTH));
 
@@ -40,7 +45,7 @@ const blockSubmitButton = (text) => {
   submitButton.disabled = true;
   submitButton.textContent = text;
 };
-  
+
 const unblockSubmitButton = () => {
   submitButton.disabled = false;
   submitButton.textContent = 'Сохранить';
