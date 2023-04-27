@@ -4,12 +4,13 @@ import {showError} from './error.js';
 import {showSuccess} from './success.js';
 import {closeUploadOverlay} from './new photo.js';
 
-
 const pictureForm = document.querySelector('#upload-select-image');
 
 const MAX_HASH_TAGS_VALUE = 5;
 const MAX_HASH_TAGS_LENGTH = 20;
 const MAX_COMMENT_LENGTH = 140;
+
+const submitButton = document.querySelector('#upload-submit');
 
 const validateHashTags = (hashTagsString) => {
   if (hashTagsString.length === 0) {
@@ -23,8 +24,9 @@ const validateHashTags = (hashTagsString) => {
   }
 
   return hashTags.every((hashTag) => /(^|\B)#(?![0-9]+\b)([a-zA-Z0-9]{1,19})(\b|\r)/g.test(hashTag)
-  && checkStringLength(hashTag, MAX_HASH_TAGS_LENGTH));
+    && checkStringLength(hashTag, MAX_HASH_TAGS_LENGTH));
 };
+
 const validateComment = (comment) => (checkStringLength(comment, MAX_COMMENT_LENGTH));
 
 const pristine = new Pristine(pictureForm);
