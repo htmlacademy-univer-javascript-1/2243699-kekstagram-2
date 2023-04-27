@@ -1,5 +1,7 @@
 const isEscapeKey = (evt) => evt.key === 'Escape';
 
+const checkStringLength = (str, maxLength) => (str.length <= maxLength);
+
 function getRandomInt (from, to) {
   let fromTemp = from;
   let toFrom = to;
@@ -19,4 +21,4 @@ function getRandomInt (from, to) {
   }
 }
 
-export { isEscapeKey, getRandomInt };
+export { isEscapeKey, getRandomInt, checkStringLength };

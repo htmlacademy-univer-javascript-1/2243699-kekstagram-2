@@ -1,4 +1,4 @@
-import { isEscapeKey } from './util.js';
+import {isEscapeKey} from './util.js';
 
 const bigPicture = document.querySelector('big-picture');
 const bigPictureCloseBtn = document.querySelector('.big-picture__cancel');
@@ -22,7 +22,7 @@ const fillCommentData = (comment) => {
 };
 
 const renderComments = (commentCurrent) => {
-  const fragment = document.createDocumentFragment();
+  const fragment = new DocumentFragment();
   commentCurrent.forEach((comment) => {
     const element = fillCommentData(comment);
     fragment.append(element);
@@ -102,4 +102,4 @@ const onPictureClick = (photo) => {
   openBigPicture(photo);
 };
 
-export { onPictureClick };
+export {openBigPicture, closeBigPicture};
