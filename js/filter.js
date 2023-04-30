@@ -1,5 +1,5 @@
-import {refute, mixArray} from './utils.js';
-import {hidePictures, showPhoto} from './pictures.js';
+import {refute, mixArray} from './util.js';
+import {hidePictures, showPhoto} from './picture-rendering.js';
 import {RERENDER_DELAY} from './constants.js';
 
 const Filters = {

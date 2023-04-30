@@ -1,6 +1,6 @@
-import {showPhoto} from './pictures.js';
+import {showPhoto} from './picture-rendering.js';
 import './new-picture.js';
-import  './picture-form.js';
+import  './form.js';
 import {inputData} from './api.js';
 import {indicateError} from './error.js';
 import {showFilters} from './filter.js';

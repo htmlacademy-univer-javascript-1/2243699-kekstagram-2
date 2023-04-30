@@ -1,4 +1,4 @@
-import {verifyStringLength} from './utils.js';
+import {verifyStringLength} from './util.js';
 import {outputData} from './api.js';
 import {indicateError} from './error.js';
 import {showSuccess} from './success.js';
