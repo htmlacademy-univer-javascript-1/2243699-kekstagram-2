@@ -1,4 +1,4 @@
-import {refute, mixArray} from './util.js';
+import {debounce, mixArray} from './util.js';
 import {hidePictures, showPhoto} from './picture-rendering.js';
 import {RERENDER_DELAY} from './constants.js';
 
@@ -35,25 +35,25 @@ const onFiltersFormClick = function (evt) {
 
       switch (actualFilter) {
         case Filters.default:
-          changePhotos(refute(() => {
+          changePhotos(debounce(() => {
             hidePictures();
             showPhoto(defaultPhotoFiltered);
           }, RERENDER_DELAY));
           break;
         case Filters.random:
-          changePhotos(refute(() => {
+          changePhotos(debounce(() => {
             hidePictures();
             showPhoto(mixArray(defaultPhotoFiltered.slice()).slice(10));
           }, RERENDER_DELAY));
           break;
         case Filters.mostCommented:
-          changePhotos(refute(() => {
+          changePhotos(debounce(() => {
             hidePictures();
             showPhoto(mixArray(defaultPhotoFiltered.slice().sort(matchComments)));
           }, RERENDER_DELAY));
           break;
         default:
-          changePhotos(refute(() => {
+          changePhotos(debounce(() => {
             hidePictures();
             showPhoto(mixArray(defaultPhotoFiltered));
           }, RERENDER_DELAY));
