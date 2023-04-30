@@ -1,11 +1,10 @@
-import {isEscapeKey} from './util.js';
-import {showCommentList, clearCommentList} from './comments.js';
+import {isEscapeKey} from './utils.js';
+import {showAllComments, clearAllComments} from './comments.js';
 
 const bigPicture = document.querySelector('.big-picture');
+const cancelBigPicture = document.querySelector('.big-picture__cancel');
 
-const closePictureElement = document.querySelector('.big-picture__cancel');
-
-const onBigPhotoEscKeydown = (evt) => {
+const onBigPictureEscKeydown = (evt) => {
   if (isEscapeKey(evt)) {
     evt.preventDefault();
     closeBigPicture();
@@ -18,17 +17,17 @@ const onClosePictureClick = (evt) => {
 };
 
 const openBigPicture = (photo) => {
-  const imgElement = bigPicture.querySelector('.big-picture__img').lastElementChild;
+  const pictureElement = bigPicture.querySelector('.big-picture__img').lastElementChild;
 
-  imgElement.src = photo.url;
-  imgElement.setAttribute('alt', 'Фото пользователя');
+  pictureElement.src = photo.url;
+  pictureElement.setAttribute('alt', 'Фото пользователя');
   bigPicture.querySelector('.social__caption').textContent =  photo.description;
   bigPicture.querySelector('.likes-count').textContent = photo.likes;
 
-  closePictureElement.addEventListener('click', onClosePictureClick);
-  document.addEventListener('keydown', onBigPhotoEscKeydown);
+  cancelBigPicture.addEventListener('click', onClosePictureClick);
+  document.addEventListener('keydown', onBigPictureEscKeydown);
 
-  showCommentList(photo.comments);
+  showAllComments(photo.comments);
   bigPicture.classList.remove('hidden');
   document.body.classList.add('modal-open');
 };
@@ -36,10 +35,10 @@ const openBigPicture = (photo) => {
 function closeBigPicture() {
   document.body.classList.remove('modal-open');
   bigPicture.classList.add('hidden');
-  clearCommentList();
+  clearAllComments();
 
-  closePictureElement.removeEventListener('click', onClosePictureClick);
-  document.removeEventListener('keydown', onBigPhotoEscKeydown);
+  cancelBigPicture.removeEventListener('click', onClosePictureClick);
+  document.removeEventListener('keydown', onBigPictureEscKeydown);
 }
 
 export {openBigPicture, closeBigPicture};

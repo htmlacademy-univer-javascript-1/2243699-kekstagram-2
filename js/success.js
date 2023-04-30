@@ -1,6 +1,8 @@
-import { isEscapeKey } from './util.js';
+import {isEscapeKey} from './utils.js';
 
-const successTemplate = document.querySelector('#success').content.querySelector('.success');
+const successTemplate = document.querySelector('#success')
+  .content
+  .querySelector('.success');
 
 const closeSuccess = () => {
   document.querySelector('.success').remove();
