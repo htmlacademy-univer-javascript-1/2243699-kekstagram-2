@@ -1,4 +1,4 @@
-import {getRandomNumber, getId, getRandomId} from './utils.js';
+import {getRandomNumber, getId, getRandomId} from './util.js';
 import {DESCRIPTIONS, MESSAGES, NAMES} from './constants.js';
 
 const createPublicationId = getId();

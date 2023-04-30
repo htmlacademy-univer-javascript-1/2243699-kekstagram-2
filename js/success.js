@@ -1,4 +1,4 @@
-import {isEscapeKey} from './utils.js';
+import {isEscapeKey} from './util.js';
 
 const successTemplate = document.querySelector('#success')
   .content

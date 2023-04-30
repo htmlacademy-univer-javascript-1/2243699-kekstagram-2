@@ -1,5 +1,5 @@
-import {isEscapeKey} from './utils.js';
-import {reloadPhotoScale} from './picture-scale.js';
+import {isEscapeKey} from './util.js';
+import {reloadPhotoScale} from './scale.js';
 import {reloadFilters} from './picture-filters.js';
 
 const uploadPhoto = document.querySelector('#upload-file');
