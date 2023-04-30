@@ -4,6 +4,7 @@ import  './form.js';
 import {inputData} from './api.js';
 import {indicateError} from './error.js';
 import {showFilters} from './filter.js';
+import './download.js';
 
 inputData((pictures) => {
   showPhoto(pictures);
